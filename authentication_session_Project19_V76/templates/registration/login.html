@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends 'testApp/base.html' %}
+    {% block body_blok %}
+     <div class="jumbotron" style="margin-top: 2%;background-color: white">
+        <div class="container">
+            <h1 style="font-size: 50px">Login to write exam.</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-large">Login</button>
+            </form>
+        </div>
+     </div>
+    {% endblock %}

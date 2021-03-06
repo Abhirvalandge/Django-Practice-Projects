@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News Page</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>{{ head_msg }}</h1><hr>
+    <ul>
+        <li>{{ msg1 }}</li>
+        <li>{{ msg2 }}</li>
+        <li>{{ msg3 }}</li>
+    </ul>
+    <img src="{% static 'images/macbook-336704_1920.jpg' %}">
+    <img src="{% static 'images/woman-1369253_1920.jpg' %}">
+</body>
+</html>

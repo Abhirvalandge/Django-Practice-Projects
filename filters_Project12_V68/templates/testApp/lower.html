@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% load cust_filters %}
+    {% for r in my_list  %}
+        <ul>
+            <li>{{ r.name |lower| add:"Student of TSEC" }}</li>
+            <li>{{ r.subject|lower }}</li>
+            <li>{{ r.dept|title }}</li>
+            <li>{{ r.date|timesince }}</li>
+        </ul><hr><hr>
+    {% endfor %}
+
+</body>
+</html>

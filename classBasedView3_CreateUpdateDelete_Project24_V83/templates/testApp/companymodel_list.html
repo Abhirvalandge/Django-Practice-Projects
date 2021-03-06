@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+{% extends 'templates/testApp/base.html' %}
+    {% block body_blok %}
+        <h1>List Of All Companies</h1>
+        {% for company in company_list  %}
+            <h2><a href="/{{ company.id }}">{{ company.name }}</a></h2>
+        {% endfor %}
+        <a href="/create" class="btn btn-lg btn-primary">Add New Company</a>
+    {% endblock %}

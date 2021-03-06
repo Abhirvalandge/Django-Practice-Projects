@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends 'testApp/base.html' %}
+    {% block body_blok %}
+        <h1 align="center">EMPLOYEE UPDATE FORM</h1>
+        <div align="center">
+
+             <form action="/create" method="post">
+              {% csrf_token %}
+                Employee Number: <input type="text" name="eno" value="{{ employees.eno }}"><br>
+                Employee Name: <input type="text" name="ename" value="{{ employees.ename }}"><br>
+                Employee Salary: <input type="text" name="esal" value="{{ employees.esal }}"><br>
+                Employee Address: <input type="text" name="eadd" value="{{ employees.eadd }}"><br>
+               <button type="submit">Save</button>
+
+            </form>
+        </div>
+    {% endblock %}

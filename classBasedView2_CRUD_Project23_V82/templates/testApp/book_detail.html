@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+{% extends 'testApp/base.html' %}
+        {% block body_blok %}
+            <h1 style="background-color: red">Books Information with Coustmized Template Name</h1>
+                    <h2>Book Title:{{ book.title }}</h2>
+                    <h2>Book Author:{{ book.author }}</h2>
+                    <h2>Number of Pages:{{ book.pages }}</h2>
+                    <h2>Book Price:{{ book.price }}</h2><hr>
+        {% endblock %}

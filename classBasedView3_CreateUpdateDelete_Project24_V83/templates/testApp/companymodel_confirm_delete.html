@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+{% extends 'templates/testApp/base.html' %}
+    {% block body_blok %}
+        <h1>Are you sure to delete {{ companymodel_list.name }}!!!</h1><hr>
+        <form method="post">
+            {% csrf_token %}
+            <input type="submit" value="Delete Record" class="btn btn-lg btn-danger">&nbsp;&nbsp;
+            <a href="/{{ companymodel_list.id }}" class="btn btn-lg btn-success">Cancel</a>
+        </form>
+    {% endblock %}

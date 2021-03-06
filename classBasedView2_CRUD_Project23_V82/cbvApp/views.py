@@ -1,0 +1,24 @@
+from django.shortcuts import render
+from django.views.generic import ListView, DetailView
+from cbvApp.models import Book
+
+# Create your views here.
+
+#Function Based View Code
+#def info_view(request):
+ #   books = Book.objects.all()
+  #  return render(request,"testApp/info.html",{'books':books})
+
+#Class Based View Code
+class BookListView(ListView):
+    model = Book
+    template_name = 'testApp/book_list.html'
+    context_object_name = 'book_list'
+    #default template : book_list.html
+    #default context object : book_list
+
+class BookDetailView(DetailView):
+    model = Book
+    #default template name:book_detail.html
+    #default context: book or object
+

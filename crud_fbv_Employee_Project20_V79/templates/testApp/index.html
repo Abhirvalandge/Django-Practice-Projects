@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% extends 'testApp/base.html' %}
+    {% block body_blok %}
+        <div align="center">
+            <h1>EMPLOYEE INFORMATION DASHBOARD</h1>
+            <table border="1">
+            {% if employees %}
+                <thead>
+                    <th>Employee No.</th>
+                    <th>Employee Name</th>
+                    <th>Employee Salary</th>
+                    <th>Employee Address</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </thead>
+                {% for emp in employees %}
+                <tr>
+                    <th>{{ emp.eno  }}</th>
+                    <th>{{ emp.ename }}</th>
+                    <th>{{ emp.esal  }}</th>
+                    <th>{{ emp.eadd  }}</th>
+                    <!--<th><a href="/update/?u_id={{ emp.id }}">Update</a></th>-->
+                    <th>
+                        <form action="{% url 'update' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="u_id" value="{{ x.id }}">
+                            <button type="submit">Update</button>
+
+                        </form>
+                    </th>
+                    <th><a href="/delete/?i={{ emp.id }}">Delete</a></th>
+                </tr>
+                {% endfor %}
+            {% endif %}
+            </table><br>
+        <a href="/create" class="btn btn-success btn-lg">Insert New Employee</a>
+        </div>
+    {% endblock %}

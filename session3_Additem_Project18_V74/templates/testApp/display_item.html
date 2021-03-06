@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends 'testApp/base.html' %}
+    {% block body_block %}
+        <h1 style="color: darkblue">Your Shopping Cart Items Information</h1><br>
+        {% if request.session %}
+            <table border="0px solid red" style="width: 40%;height: 50%">
+                <thead style="background-color: yellow;font-size: 30px">
+                    <th>Name of Item</th>
+                    <th>Quantity</th>
+                </thead>
+                {% for key, value in request.session.items  %}
+                    <tr style="color: red;font-size: 20px">
+                        <th>{{ key }}</th>
+                        <th>{{ value }}</th>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <p>No Items in Shopping Cart</p>
+            </table>
+        
+        {% endif %} 
+
+    {% endblock %}

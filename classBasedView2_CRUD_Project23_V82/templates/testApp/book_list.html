@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+    {% extends 'testApp/base.html' %}
+        {% block body_blok %}
+            <h1 style="background-color: red">Books Information with Coustmized Template Name</h1>
+            {% for book in book_list  %}
+                <ul>
+                    <li>Book Title:{{ book.title }}</li>
+                    <li>Book Author:{{ book.author }}</li>
+                    <li>Number of Pages:{{ book.pages }}</li>
+                    <li>Book Price:{{ book.price }}</li><hr>
+                </ul>
+            {% endfor %}
+        {% endblock %}

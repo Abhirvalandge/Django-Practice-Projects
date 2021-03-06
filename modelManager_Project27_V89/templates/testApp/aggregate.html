@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends 'testApp/base.html' %}
+    {% block body_blok %}
+        <div align="center">
+            <h1>EMPLOYEE AGGREGATE INFORMATION</h1>
+            <ul>
+                <li>Average Salary:{{ avg1 }}</li>
+                <li>Max Salary:{{ max }}</li>
+                <li>Min Salary:{{ min }}</li>
+                <li>Total Salary:{{ sum }}</li>
+                <li>Number of Employees:{{ count }}</li>
+            </ul>
+        </div>
+    {% endblock %}

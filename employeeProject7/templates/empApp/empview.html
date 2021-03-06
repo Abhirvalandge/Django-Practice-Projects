@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="{% static "css/style.css" %}">
+    <style type="text/css">
+        h1 {
+            color: darkblue;
+            text-align: center;
+        }
+
+        table {
+            border: 2px solid blue;
+            margin: auto;
+            background-color: yellow;
+            font-size: 25px;
+        }
+        thead{
+            background-color: darkcyan;
+            color: white;
+        }
+        p {
+            color: darkblue;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body style="background-image: url( {% static 'images/blue-sky-thumbnail.jpg' %});background-repeat: no-repeat;background-size: cover">
+<h1>Employee Information.</h1>
+{% if emp_list %}
+    <table border="1px solid blue">
+        <thead>
+        <th>EMP No.</th>
+        <th>EMP Name</th>
+        <th>EMP Salary</th>
+        <th>EMP Address</th>
+        </thead>
+        {% for emp in emp_list %}
+            <tr>
+                <th>{{ emp.eno }}</th>
+                <th>{{ emp.ename }}</th>
+                <th>{{ emp.esal }}</th>
+                <th>{{ emp.eaddr }}</th>
+            </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>No Employee Found</p>
+{% endif %}
+</body>
+</html>

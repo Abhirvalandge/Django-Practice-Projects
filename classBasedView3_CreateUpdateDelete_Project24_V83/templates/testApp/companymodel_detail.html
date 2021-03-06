@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+{% extends 'templates/testApp/base.html' %}
+    {% block body_blok %}
+        <h1>{{ object.name }} Information</h1><hr>
+        <h2>Location:{{ object.location }}</h2>
+        <h2>Name of CEO:{{ object.ceo }}</h2>
+        <a href="/update/{{ companymodel_list.id }}" class="btm btn-lg btn-warning">Update Company Information</a>&nbsp;&nbsp;
+        <a href="/delete/{{ companymodel_list.id }}" class="btm btn-lg btn-danger">Delete Company Information</a>
+    {% endblock %}

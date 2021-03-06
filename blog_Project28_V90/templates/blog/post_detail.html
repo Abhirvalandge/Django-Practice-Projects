@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% extends 'blog/base.html' %}
+    {% block title_blog %}{{ post.title }}{% endblock %}
+
+    {% block content %}
+        <h1>ABHIRVA's BLOG</h1>
+            <h2>{{ post.title }}</h2>
+            <p id="date">Published on {{ post.publish }} by {{ post.author|title }}</p>
+            {{ post.body|linebreaks }}
+            <div>
+                <br><a href="{% url 'post_share' post.id %}" class="btn btn-primary btn-lg">Share Post By Email</a>
+            </div>
+            <div>
+                {% with comments.count as total_comments  %}
+                    <h2>{{ total_comments }} comments {{ total_comments|pluralize }}</h2>
+                {% endwith %}
+
+                {% for comment in comments %}
+                    <div class="comment">
+                        <p class="info">
+                            Comment {{ forloop.counter }} by {{ comment.name }} {{ comment.created }}
+                        </p>
+                        {{ comment.body|linebreaks }}
+                    </div>
+                {% empty %}
+                    <p>There are no comments here yet.</p>
+                {% endfor %}
+                
+            {% if new_comment %}
+                <h2>Your Comment has been added</h2>
+                {% else %}
+                <h2>Add a new comment</h2>
+                <form action="{% url 'comment_view' %}" method="post">
+                    {{ comment_form.as_p }}
+                    {% csrf_token %}
+                    <p><input type="submit" value="Add Comment"></p>
+                </form>
+            {% endif %}
+          </div>
+    {% endblock %}

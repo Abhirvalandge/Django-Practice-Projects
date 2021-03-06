@@ -1,0 +1,30 @@
+h1 {
+    color: darkblue;
+    text-align: center;
+}
+
+table {
+    border: 2px solid blue;
+    margin: auto;
+    background-color: yellow;
+    font-size: 25px;
+}
+thead {
+    background-color: darkcyan;
+    color: white;
+}
+
+p {
+    color: darkblue;
+    font-size: 20px;
+}
+
+.container .jumbotron {
+    background-color: red;
+    color: white;
+    margin-top: 180px;
+}
+img{
+    width: 30%;
+    height: 30%;
+}

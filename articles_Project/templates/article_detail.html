@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+    {% block title_blog %}{{ post.title }}{% endblock %}
+
+    {% block content %}
+        <h1>ABHIRVA's BLOG</h1>
+        <h2>{{ object.title }}</h2>
+        <p>{{ object.body }}</p>
+    {% endblock %}
